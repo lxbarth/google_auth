@@ -10,6 +10,10 @@ function google_auth_profile_modules() {
   $modules = array_merge($modules,
     array(
       'devel',
+      'gdata',
+      'zend',
+      'autoload',
+      'gdata_fusion',
     )
   );
   return $modules;
