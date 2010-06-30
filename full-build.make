@@ -6,7 +6,7 @@ projects[drupal][version] = "6.17"
 projects[buildkit][type] = profile
 projects[buildkit][download][type] = "cvs"
 projects[buildkit][download][module] = "contributions/profiles/buildkit"
-projects[buildkit][download][revision] = "HEAD"
+projects[buildkit][download][revision] = "HEAD:2010-06-30"
 
 projects[google_auth][type] = profile
 projects[google_auth][download][type] = git
