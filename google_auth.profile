@@ -10,10 +10,11 @@ function google_auth_profile_modules() {
   $modules = array_merge($modules,
     array(
       'devel',
-      'gdata',
-      'oauth_common',
-      'zend',
       'autoload',
+      'zend',
+      'oauth_common',
+      'inputstream',
+      'gdata',
       'gdata_fusion',
       'gdata_oauth',
     )

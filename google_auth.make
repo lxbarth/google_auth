@@ -16,3 +16,6 @@ projects[zend][subdir] = "contrib"
 
 projects[oauth_common][version] = "2.0-beta2"
 projects[oauth_common][subdir] = "contrib"
+
+projects[inputstream][version] = "1.0"
+projects[inputstream][subdir] = "contrib"
