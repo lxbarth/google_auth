@@ -13,3 +13,6 @@ projects[autoload][subdir] = "contrib"
 
 projects[zend][version] = "2"
 projects[zend][subdir] = "contrib"
+
+projects[oauth_common][version] = "2.0-beta2"
+projects[oauth_common][subdir] = "contrib"

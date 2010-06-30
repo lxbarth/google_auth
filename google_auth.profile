@@ -11,9 +11,11 @@ function google_auth_profile_modules() {
     array(
       'devel',
       'gdata',
+      'oauth_common',
       'zend',
       'autoload',
       'gdata_fusion',
+      'gdata_oauth',
     )
   );
   return $modules;
