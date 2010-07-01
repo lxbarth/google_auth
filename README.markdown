@@ -16,7 +16,7 @@ a tarball containing the entire site tree, ready to be deployed.
 ## Build for development
 
 Run full-build-dev.sh from within the google_ee profile directory. This will
-create a directory containing the entire site tree. All projects pointed to a 
+create a directory containing the entire site tree. All projects pointed to a
 repository will be checked out as a working copy.
 
 ## Installation
@@ -26,3 +26,14 @@ installation process asks to select an installation profile, pick "Google
 Auth".
 
 See [Drupal Installation Guide](http://drupal.org/getting-started/install).
+
+## Set up OAuth
+
+1. Go to http://code.google.com/apis/accounts/docs/RegistrationForWebAppsAuto.html#new
+and register your domain, you will obtain an OAuth consumer key and an OAuth
+consumer secret.
+2. Go to your site's admin/settings/gdata/oauth and enter the key and secret.
+3. Go to your site's admin/settings/gdata and replace existing scopes with
+http://tables.googlelabs.com/api/query
+4. Go to your Drupal user account, click on the "Google" tab and request and
+authorize a token.
