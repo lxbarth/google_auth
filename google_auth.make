@@ -18,7 +18,7 @@ projects[zend][version] = "2"
 projects[zend][subdir] = "contrib"
 
 libraries[zend][download][type] = "get"
-libraries[zend][download][url] = "http://framework.zend.com/releases/ZendFramework-1.10.6/ZendFramework-1.10.6.tar.gz"
+libraries[zend][download][url] = "http://framework.zend.com/releases/ZendFramework-1.10.6/ZendFramework-1.10.6-minimal.tar.gz"
 libraries[zend][directory_name] = "Zend"
 
 projects[oauth_common][version] = "2.0-beta2"
