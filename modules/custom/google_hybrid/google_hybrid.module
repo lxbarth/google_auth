@@ -5,10 +5,12 @@
  *
  * Request OAuth token.
  */
-function google_hybrid_openid($op, &$request) {
+function google_hybrid_openid($op, $request) {
+  $request = array();
   if ($op == 'request') {
     $request['openid.ns.oauth'] = "http://specs.openid.net/extensions/oauth/1.0";
     $request['openid.oauth.consumer'] = variable_get('gdata_oauth_consumer_secret', '');
     $request['openid.oauth.scope'] = gdata_auth_get_scope();
   }
+  return $request;
 }
