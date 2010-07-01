@@ -11,6 +11,7 @@ function google_auth_profile_modules() {
     array(
       'devel',
       'autoload',
+      'libraries',
       'zend',
       'oauth_common',
       'inputstream',
