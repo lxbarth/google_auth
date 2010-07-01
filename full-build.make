@@ -2,6 +2,7 @@
 
 core = "6.x"
 projects[drupal][version] = "6.17"
+projects[drupal][patch][] = "http://drupal.org/files/issues/339600-19_google_openid_6.patch"
 
 projects[buildkit][type] = profile
 projects[buildkit][download][type] = "cvs"
