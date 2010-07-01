@@ -14,7 +14,7 @@ projects[autoload][subdir] = "contrib"
 projects[libraries][version] = "1.0-alpha1"
 projects[libraries][subdir] = "contrib"
 
-projects[zend][version] = "2"
+projects[zend][version] = "1"
 projects[zend][subdir] = "contrib"
 
 libraries[zend][download][type] = "get"

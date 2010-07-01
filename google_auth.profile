@@ -37,6 +37,7 @@ function google_auth_profile_details() {
  * Perform any final installation tasks for this profile.
  */
 function google_auth_profile_tasks(&$task, $url) {
+  variable_set('zend_path', 'profiles/google_auth/libraries/Zend/library');
   // This is where features are usually being enabled.
   $features = array(
   );
