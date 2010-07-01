@@ -29,9 +29,8 @@ See [Drupal Installation Guide](http://drupal.org/getting-started/install).
 
 ## Set up OAuth
 
-1. Go to http://code.google.com/apis/accounts/docs/RegistrationForWebAppsAuto.html#new
-and register your domain, you will obtain an OAuth consumer key and an OAuth
-consumer secret.
+1. Go to [Google and register your domain](http://code.google.com/apis/accounts/docs/RegistrationForWebAppsAuto.html#new),
+you will obtain an OAuth consumer key and an OAuth consumer secret.
 2. Go to your site's admin/settings/gdata/oauth and enter the key and secret.
 3. Go to your site's admin/settings/gdata and replace existing scopes with
 http://tables.googlelabs.com/api/query
