@@ -24,5 +24,11 @@ libraries[zend][directory_name] = "Zend"
 projects[oauth_common][version] = "2.0-beta2"
 projects[oauth_common][subdir] = "contrib"
 
+projects[oauth_common][type] = "module"
+projects[oauth_common][download][type] = "cvs"
+projects[oauth_common][download][module] = "contributions/modules/oauth_common"
+projects[oauth_common][download][revision] = "HEAD"
+projects[oauth_common][subdir] = "contrib"
+
 projects[inputstream][version] = "1.0"
 projects[inputstream][subdir] = "contrib"
