@@ -2,3 +2,4 @@ name = "Google Hybrid OpenID+OAuth"
 description = "Authenticate user and authorize site to access user's resources in one step."
 dependencies[] = "openid"
 dependencies[] = "gdata"
+core = 6.x
