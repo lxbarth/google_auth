@@ -8,7 +8,9 @@ class FeedsFTProcessor extends FeedsProcessor {
    * Implementation of FeedsProcessor::process().
    */
   public function process(FeedsImportBatch $batch, FeedsSource $source) {
-    $fusion = new Drupal_Gdata_Fusion();
+    // @todo Use feed node's owner?
+    global $user;
+    $fusion = gdata_fusion_user_get_client($user);
     $source_config = $source->getConfigFor($this);
 
     // Allocate a Fusion table if it does not exist yet.
