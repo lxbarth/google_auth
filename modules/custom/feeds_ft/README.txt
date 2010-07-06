@@ -16,6 +16,6 @@ USAGE
    details on how to create a Feeds Importer.
 3. Use the Feeds Importer like any other one.
 
-[1] http://drupal.org/project/feeds
+[1] http://drupal.org/project/feeds, use latest CVS HEAD
 [2] http://tables.googlelabs.com/
 [3] http://drupal.org/node/622696
