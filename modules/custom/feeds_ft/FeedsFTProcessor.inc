@@ -6,6 +6,8 @@
 class FeedsFTProcessor extends FeedsProcessor {
   /**
    * Implementation of FeedsProcessor::process().
+   *
+   * @todo Implement batch support.
    */
   public function process(FeedsImportBatch $batch, FeedsSource $source) {
     // @todo Use feed node's owner?
@@ -27,9 +29,12 @@ class FeedsFTProcessor extends FeedsProcessor {
     }
 
     // Iterate through all items and store to FT.
+    $created = 0;
     while ($item = $batch->shiftItem()) {
-      $fusion->insertData($ft_id, $this->map($item));
+      $fusion->insertRow($ft_id, $this->map($item));
+      $created++;
     }
+    drupal_set_message(t('Created !created items', array('!created' => $created)));
     return FEEDS_BATCH_COMPLETE;
   }
 
