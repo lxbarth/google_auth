@@ -18,6 +18,8 @@ function google_auth_profile_modules() {
       'gdata',
       'gdata_fusion',
       'gdata_oauth',
+      'feeds',
+      'feeds_ui',
     )
   );
   return $modules;
