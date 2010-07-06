@@ -15,7 +15,7 @@ class FeedsFTProcessor extends FeedsProcessor {
     // @todo: modify table if mapping has changed in meantime.
     $ft_id = $source_config['fusion_table_id'];
     if (empty($ft_id)) {
-      if ($ft_id = $fusion->createTable('feeds_'. $this->id .'-'. $source->feed_nid, $this->getFTSchema())) {
+      if ($ft_id = $fusion->createTable('feeds_'. $this->id .'_'. $source->feed_nid, $this->getFTSchema())) {
         $source_config['fusion_table_id'] = $ft_id;
         $source->addConfig(array(get_class($this) => $source_config));
       }
@@ -76,6 +76,9 @@ class FeedsFTProcessor extends FeedsProcessor {
 
   /**
    * Handle adding a mapping.
+   *
+   * @todo: sanitize $source names as not all characters are allowed in FT
+   * tables.
    */
   public function addMapping($source, $target, $unique = FALSE) {
     parent::addMapping($source, $source, $unique);
