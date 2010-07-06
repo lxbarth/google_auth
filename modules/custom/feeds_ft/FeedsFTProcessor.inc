@@ -18,8 +18,9 @@ class FeedsFTProcessor extends FeedsProcessor {
     // Allocate a Fusion table if it does not exist yet.
     // @todo: modify table if mapping has changed in meantime.
     $ft_id = $source_config['fusion_table_id'];
+    $schema = $this->getFTSchema();
     if (empty($ft_id)) {
-      if ($ft_id = $fusion->createTable('feeds_'. $this->id .'_'. $source->feed_nid, $this->getFTSchema())) {
+      if ($ft_id = $fusion->createTable('feeds_'. $this->id .'_'. $source->feed_nid, $schema)) {
         $source_config['fusion_table_id'] = $ft_id;
         $source->addConfig(array(get_class($this) => $source_config));
       }
@@ -30,11 +31,25 @@ class FeedsFTProcessor extends FeedsProcessor {
 
     // Iterate through all items and store to FT.
     $created = 0;
+    $data = array();
     while ($item = $batch->shiftItem()) {
-      $fusion->insertRow($ft_id, $this->map($item));
+      $data[] = $this->map($item);
       $created++;
     }
-    drupal_set_message(t('Created !created items', array('!created' => $created)));
+
+    // Set messages.
+    if ($created) {
+      if ($fusion->insertData($ft_id, array_keys($schema), $data)) {
+        drupal_set_message(t('Created !created items in Google Fusion Tables', array('!created' => $created)));
+      }
+      else {
+        drupal_set_message(t('There was an error transferring data to Google Fusion Tables'), 'error');
+      }
+    }
+    else {
+      drupal_set_message(t('There is no data to be transferred to Google Fusion Tables'));
+    }
+
     return FEEDS_BATCH_COMPLETE;
   }
 
