@@ -50,6 +50,16 @@ class FeedsFTProcessor extends FeedsProcessor {
   }
 
   /**
+   * Declare that we have source configuration.
+   *
+   * @todo FeedsPlugin::hasSourceConfig() should use sourceDefaults() for
+   * determining whether a plugin has source configuration or not.
+   */
+  public function hasSourceConfig() {
+    return TRUE;
+  }
+
+  /**
    * Override parent::map().
    */
   protected function map($source_item, $target_item = NULL) {
