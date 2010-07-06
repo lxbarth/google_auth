@@ -13,10 +13,10 @@ class FeedsFTProcessor extends FeedsProcessor {
 
     // Allocate a Fusion table if it does not exist yet.
     // @todo: modify table if mapping has changed in meantime.
-    $ft_id = $source_config['fusion_table'];
+    $ft_id = $source_config['fusion_table_id'];
     if (empty($ft_id)) {
       if ($ft_id = $fusion->createTable('feeds_'. $this->id .'-'. $source->feed_nid, $this->getFTSchema())) {
-        $source_config['fusion_table'] = $ft_id;
+        $source_config['fusion_table_id'] = $ft_id;
         $source->addConfig(array(get_class($this) => $source_config));
       }
       else {
@@ -40,10 +40,12 @@ class FeedsFTProcessor extends FeedsProcessor {
 
   /**
    * Define defaults.
+   *
+   * Declare a fusion table ID to be stored for each source.
    */
   public function sourceDefaults() {
     return array(
-      'fusion_table' => NULL,
+      'fusion_table_id' => NULL,
     );
   }
 
@@ -71,6 +73,8 @@ class FeedsFTProcessor extends FeedsProcessor {
 
   /**
    * Override parent::getMappingTargets().
+   *
+   * @todo: implement types STRING, NUMBER, LOCATION, DATETIME
    */
   public function getMappingTargets() {
     return array(
@@ -85,6 +89,11 @@ class FeedsFTProcessor extends FeedsProcessor {
    * Build a Fusion Table schema from mappings.
    */
   public function getFTSchema() {
+    $schema = array();
     $mappings = $this->getMappings();
+    foreach ($mappings as $mapping) {
+      $schema[$mapping['target']] = 'STRING';
+    }
+    return $schema;
   }
 }
