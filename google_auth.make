@@ -29,6 +29,7 @@ projects[oauth_common][subdir] = "contrib"
 ; http://drupal.org/node/846370
 projects[oauth_common][patch][] = "http://drupal.org/files/issues/oauth_common_token_length.patch"
 projects[oauth_common][patch][] = "http://drupal.org/files/issues/842990-3_oauth_common_authorization_contexts.patch"
+projects[oauth_common][patch][] = "http://drupal.org/files/issues/846734-1_consumer.patch"
 
 projects[feeds][type] = "module"
 projects[feeds][download][type] = "cvs"
