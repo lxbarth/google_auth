@@ -36,5 +36,11 @@ projects[feeds][download][module] = "contributions/modules/feeds"
 projects[feeds][download][revision] = "HEAD"
 projects[feeds][subdir] = "contrib"
 
+projects[feeds_ft][subdir] = "custom"
+projects[feeds_ft][type] = "module"
+projects[feeds_ft][download][type] = "git"
+projects[feeds_ft][download][url] = "git://github.com/lxbarth/feeds_ft.git"
+projects[feeds_ft][download][branch] = "master"
+
 projects[inputstream][version] = "1.0"
 projects[inputstream][subdir] = "contrib"
