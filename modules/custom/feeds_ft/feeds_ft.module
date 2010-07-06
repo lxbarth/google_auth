@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Implementation of hook_feeds_pugins().
+ */
+function feeds_ft_feeds_plugins() {
+  $info = array();
+  $info['FeedsFTProcessor'] = array(
+    'name' => 'Fusion Tables Processor',
+    'description' => 'Uploads data to Google Fusion Tables.',
+    'handler' => array(
+      'parent' => 'FeedsProcessor',
+      'class' => 'FeedsFTProcessor',
+      'file' => 'FeedsFTProcessor.inc',
+      'path' => drupal_get_path('module', 'feeds_ft'),
+    ),
+  );
+  return $info;
+}

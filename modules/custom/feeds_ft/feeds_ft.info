@@ -1,0 +1,5 @@
+name = "Feeds Fusion Tables"
+description = "Upload data to Google Fusion Tables through Drupal."
+dependencies[] = "feeds"
+dependencies[] = "gdata_fusion"
+core = "6.x"
