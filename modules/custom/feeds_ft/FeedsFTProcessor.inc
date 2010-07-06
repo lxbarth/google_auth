@@ -39,7 +39,7 @@ class FeedsFTProcessor extends FeedsProcessor {
   }
 
   /**
-   * Define defaults.
+   * Declare source defaults.
    *
    * Declare a fusion table ID to be stored for each source.
    */
