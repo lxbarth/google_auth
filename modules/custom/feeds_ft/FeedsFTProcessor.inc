@@ -1,7 +1,7 @@
 <?php
 
 // Create FEEDS_FT_BATCH_SIZE at a time.
-define('FEEDS_FT_BATCH_SIZE', 100);
+define('FEEDS_FT_BATCH_SIZE', 500);
 
 /**
  * Upload to Google Fusion Tables.
