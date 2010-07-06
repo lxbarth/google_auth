@@ -1,5 +1,8 @@
 <?php
 
+// Create FEEDS_FT_BATCH_SIZE at a time.
+define('FEEDS_FT_BATCH_SIZE', 100);
+
 /**
  * Upload to Google Fusion Tables.
  */
@@ -35,12 +38,16 @@ class FeedsFTProcessor extends FeedsProcessor {
     while ($item = $batch->shiftItem()) {
       $data[] = $this->map($item);
       $created++;
+      $batch->created++;
+      if ($created > variable_get('feeds_ft_batch_size', FEEDS_FT_BATCH_SIZE)) {
+        return (1.0 / ($batch->total + 1)) * $batch->created; // @todo: move this into $batch->progress();
+      }
     }
 
     // Set messages.
-    if ($created) {
+    if ($batch->created) {
       if ($fusion->insertData($ft_id, array_keys($schema), $data)) {
-        drupal_set_message(t('Created !created items in Google Fusion Tables', array('!created' => $created)));
+        drupal_set_message(t('Created !created items in Google Fusion Tables', array('!created' => $batch->created)));
       }
       else {
         drupal_set_message(t('There was an error transferring data to Google Fusion Tables'), 'error');
