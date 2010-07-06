@@ -29,8 +29,4 @@ See [Drupal Installation Guide](http://drupal.org/getting-started/install).
 
 ## Set up OAuth and Fusion Tables
 
-1. Go to [Google and register your domain](http://code.google.com/apis/accounts/docs/RegistrationForWebAppsAuto.html#new),
-you will obtain an OAuth consumer key and an OAuth consumer secret.
-2. Go to your site's admin/settings/oauth/google and enter the key and secret.
-3. Go to your Drupal user account, click on the "Google" tab and request and
-authorize a token.
+- Follow instrustion in Feeds Fusion Tables module.
