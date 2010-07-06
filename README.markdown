@@ -31,11 +31,6 @@ See [Drupal Installation Guide](http://drupal.org/getting-started/install).
 
 1. Go to [Google and register your domain](http://code.google.com/apis/accounts/docs/RegistrationForWebAppsAuto.html#new),
 you will obtain an OAuth consumer key and an OAuth consumer secret.
-2. Go to your site's admin/settings/gdata/oauth and enter the key and secret.
-3. Go to your site's admin/settings/gdata and replace existing scopes with
-http://tables.googlelabs.com/api/query
-4. Go to your Drupal user account, click on the "Google" tab and request and
+2. Go to your site's admin/settings/oauth/google and enter the key and secret.
+3. Go to your Drupal user account, click on the "Google" tab and request and
 authorize a token.
-5. Edit your settings.php file and add email and password of your Google account
-in the form of $conf['gdata_fusion_mail'] = 'mail'; and
-$conf['gdata_fusion_pass'] = 'pw';
