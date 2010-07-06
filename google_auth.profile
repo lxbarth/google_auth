@@ -14,6 +14,7 @@ function google_auth_profile_modules() {
       'libraries',
       'zend',
       'oauth_common',
+      'oauth_google',
       'inputstream',
       'gdata',
       'gdata_fusion',
