@@ -21,6 +21,7 @@ function google_auth_profile_modules() {
       'gdata_oauth',
       'feeds',
       'feeds_ui',
+      'feeds_ft',
     )
   );
   return $modules;
@@ -43,6 +44,7 @@ function google_auth_profile_tasks(&$task, $url) {
   variable_set('zend_path', 'profiles/google_auth/libraries/Zend/library');
   // This is where features are usually being enabled.
   $features = array(
+    'ga_ft',
   );
   drupal_install_modules($features);
 
