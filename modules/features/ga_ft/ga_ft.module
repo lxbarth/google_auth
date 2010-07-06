@@ -1,0 +1,3 @@
+<?php
+
+include_once('ga_ft.features.inc');
