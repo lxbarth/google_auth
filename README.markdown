@@ -29,4 +29,4 @@ See [Drupal Installation Guide](http://drupal.org/getting-started/install).
 
 ## Set up OAuth and Fusion Tables
 
-- Follow instrustion in Feeds Fusion Tables module.
+- Follow instructions 2-4 in Feeds Fusion Tables module.
