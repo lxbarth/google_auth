@@ -3,16 +3,26 @@
 ; This make file is based off buildkit.
 includes[buildkit] = "../buildkit/drupal-org.make"
 
-projects[gftables][subdir] = "custom"
-projects[gftables][type] = "module"
-projects[gftables][download][type] = "svn"
-projects[gftables][download][url] = "https://devseed.svn.cvsdude.com/sandbox/jose/gftables/"
-
 projects[autoload][version] = "1.4"
 projects[autoload][subdir] = "contrib"
 
 projects[libraries][version] = "1.0-alpha1"
 projects[libraries][subdir] = "contrib"
+
+projects[oauth][subdir] = "custom"
+projects[oauth][download][type] = "git"
+projects[oauth][download][url] = "git://github.com/josereyero/oauth.git"
+projects[oauth][download][branch] = "master"
+
+projects[oauth_google][subdir] = "custom"
+projects[oauth_google][download][type] = "git"
+projects[oauth_google][download][url] = "git://github.com/josereyero/oauth_google.git"
+projects[oauth_google][download][branch] = "master"
+
+projects[gdata][subdir] = "custom"
+projects[gdata][download][type] = "git"
+projects[gdata][download][url] = "git://github.com/josereyero/gdata.git"
+projects[gdata][download][branch] = "master"
 
 projects[zend][version] = "1"
 projects[zend][subdir] = "contrib"
@@ -20,16 +30,6 @@ projects[zend][subdir] = "contrib"
 libraries[zend][download][type] = "get"
 libraries[zend][download][url] = "http://framework.zend.com/releases/ZendFramework-1.10.6/ZendFramework-1.10.6-minimal.tar.gz"
 libraries[zend][directory_name] = "Zend"
-
-projects[oauth_common][type] = "module"
-projects[oauth_common][download][type] = "cvs"
-projects[oauth_common][download][module] = "contributions/modules/oauth_common"
-projects[oauth_common][download][revision] = "HEAD"
-projects[oauth_common][subdir] = "contrib"
-; http://drupal.org/node/846370
-projects[oauth_common][patch][] = "http://drupal.org/files/issues/oauth_common_token_length.patch"
-projects[oauth_common][patch][] = "http://drupal.org/files/issues/842990-3_oauth_common_authorization_contexts.patch"
-projects[oauth_common][patch][] = "http://drupal.org/files/issues/846734-1_consumer.patch"
 
 projects[feeds][type] = "module"
 projects[feeds][download][type] = "cvs"
